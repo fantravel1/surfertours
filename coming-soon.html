@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — SurferTours | Surf Progression, Not Surf Travel</title>
+  <meta name="description" content="Something new is paddling out. SurferTours is building the best surf progression platform — crew-based trips, safety-first, real improvement. Stay in the lineup.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://surfertours.com/coming-soon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Coming Soon — SurferTours">
+  <meta property="og:description" content="Something new is paddling out. Surf progression trips, crew-based booking, safety by design.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://surfertours.com/coming-soon">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1502680390548-bdbac40a5e42?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #1b1b1b;
+      --paper: #faf8f4;
+      --ocean-deep: #0f2636;
+      --coral: #c4652e;
+      --foam: #ffffff;
+      --drift: #8b8378;
+      --shore: #c8bfb0;
+      --sand: #efe9db;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--foam);
+      background-color: var(--ocean-deep);
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Animated background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,38,54,0.9), rgba(26,58,74,0.85), rgba(15,38,54,0.95));
+      z-index: 1;
+    }
+
+    .bg-grain {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 3rem;
+      opacity: 0.8;
+    }
+
+    .logo a {
+      color: var(--foam);
+      text-decoration: none;
+    }
+
+    .logo span { font-weight: 300; }
+
+    .wave-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: wave-float 3s ease-in-out infinite;
+    }
+
+    @keyframes wave-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-8px) rotate(-3deg); }
+      75% { transform: translateY(4px) rotate(2deg); }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--shore);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .countdown__block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .countdown__number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--foam);
+    }
+
+    .countdown__label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--shore);
+    }
+
+    .countdown__sep {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--shore);
+      opacity: 0.3;
+      align-self: flex-start;
+      margin-top: 0.2em;
+    }
+
+    /* Form */
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+
+    @media (min-width: 480px) {
+      .form {
+        flex-direction: row;
+      }
+    }
+
+    .form input {
+      flex: 1;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      color: var(--foam);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      min-height: 48px;
+      transition: border-color 0.2s ease;
+    }
+
+    .form input::placeholder { color: var(--shore); }
+    .form input:focus { outline: none; border-color: var(--coral); }
+
+    .form button {
+      padding: 0.9rem 2rem;
+      background: var(--coral);
+      color: var(--foam);
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-height: 48px;
+      white-space: nowrap;
+    }
+
+    .form button:hover {
+      background: #a8542a;
+      transform: translateY(-1px);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--shore);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover { color: var(--foam); }
+
+    .back-link svg {
+      transition: transform 0.2s ease;
+    }
+
+    .back-link:hover svg {
+      transform: translateX(-4px);
+    }
+
+    /* Floating elements */
+    .float-circle {
+      position: fixed;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .float-circle:nth-child(1) {
+      width: 300px; height: 300px;
+      top: -100px; right: -80px;
+      animation: drift 20s ease-in-out infinite;
+    }
+
+    .float-circle:nth-child(2) {
+      width: 200px; height: 200px;
+      bottom: -60px; left: -40px;
+      animation: drift 15s ease-in-out infinite reverse;
+    }
+
+    .float-circle:nth-child(3) {
+      width: 150px; height: 150px;
+      top: 40%; left: 10%;
+      animation: drift 25s ease-in-out infinite;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(20px, -30px); }
+      50% { transform: translate(-15px, 20px); }
+      75% { transform: translate(25px, 10px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background -->
+  <div class="bg">
+    <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1920&q=60" alt="" width="1920" height="1080" loading="eager">
+  </div>
+  <div class="bg-overlay"></div>
+  <div class="bg-grain"></div>
+
+  <!-- Floating decorative elements -->
+  <div class="float-circle"></div>
+  <div class="float-circle"></div>
+  <div class="float-circle"></div>
+
+  <!-- Content -->
+  <main class="content">
+    <div class="logo"><a href="/">Surfer<span>Tours</span></a></div>
+
+    <span class="wave-icon" aria-hidden="true">~</span>
+
+    <h1>Something New Is Paddling Out</h1>
+
+    <p class="subtitle">
+      We're building something worth waiting for. Surf progression trips, crew-based booking, and a safety-first approach to surf travel.
+    </p>
+
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">
+      <div class="countdown__block">
+        <span class="countdown__number" id="days">00</span>
+        <span class="countdown__label">Days</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__block">
+        <span class="countdown__number" id="hours">00</span>
+        <span class="countdown__label">Hours</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__block">
+        <span class="countdown__number" id="minutes">00</span>
+        <span class="countdown__label">Minutes</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__block">
+        <span class="countdown__number" id="seconds">00</span>
+        <span class="countdown__label">Seconds</span>
+      </div>
+    </div>
+
+    <!-- Email Signup -->
+    <form class="form newsletter__form" action="#" method="POST">
+      <input type="email" class="newsletter__input" placeholder="your@email.com" aria-label="Email address" required>
+      <button type="submit" class="btn btn--primary">Notify Me</button>
+    </form>
+
+    <a href="/" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12L6 8l4-4"/></svg>
+      Back to homepage
+    </a>
+  </main>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
